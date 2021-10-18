@@ -156,7 +156,7 @@
           </button>
           <a class="navbar-brand" href="./">Manajemen Penlitian dan Pengabdian</a>
         </div>
-       <div class="navbar-content" style="float:right; color:white; margin-top:15px;">
+       <div class="navbar-content" id="user" style="float:right; color:white; margin-top:15px;">
        {{Auth::user()->name}}
        </div>
       </div>

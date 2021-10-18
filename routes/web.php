@@ -18,7 +18,7 @@ use App\Http\Controllers\UserController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('login');
 });
 
 Route::get('/penelitians', [PenelitiansController::class, 'index']);
@@ -30,7 +30,9 @@ Route::get('/pengabdians/grid', [PengabdiansController::class, 'grid']);
 Route::resource('/pengabdians', PengabdiansController::class);
 
 Route::get('/login', [AuthController::class, 'index']);
+Route::get('/register', [AuthController::class, 'register']);
 Route::post('loginUser', [AuthController::class, 'loginUser']);
+Route::post('createUser', [AuthController::class, 'createUser']);
 Route::get('logout', [AuthController::class, 'logout'])->name('logout');
 
 Route::get('/user', [UserController::class, 'index']);

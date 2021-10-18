@@ -10,6 +10,8 @@
         List of {{ ucfirst('penelitian') }}
     </div>
 
+    <!-- <input type="hidden" name="username" value="'{{Auth::user()->name}}'"> -->
+
     <div class="panel-body">
         <div class="">
             <table class="table table-striped" id="thegrid">
@@ -46,6 +48,7 @@
 
 @section('scripts')
     <script type="text/javascript">
+        var user = document.getElementById("user").innerHTML
         var theGrid = null;
         $(document).ready(function(){
             theGrid = $('#thegrid').DataTable({

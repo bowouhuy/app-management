@@ -46,6 +46,7 @@
                   <button type="submit" class="btn btn-black">Login</button>
                   <!-- <button type="submit" class="btn btn-secondary">Register</button> -->
                </form>
+               <div class="small">Belum punya akun? <a href="/register">Register</a></div>
             </div>
          </div>
       </div>

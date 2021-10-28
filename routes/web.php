@@ -35,4 +35,6 @@ Route::post('loginUser', [AuthController::class, 'loginUser']);
 Route::post('createUser', [AuthController::class, 'createUser']);
 Route::get('logout', [AuthController::class, 'logout'])->name('logout');
 
-Route::get('/user', [UserController::class, 'index']);
+Route::get('/user', [UserController::class, 'show']);
+Route::get('/user/{id}/edit', [UserController::class, 'edit']);
+Route::post('/user/{id}/update', [UserController::class, 'update']);

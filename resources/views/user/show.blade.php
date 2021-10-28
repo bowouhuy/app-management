@@ -4,102 +4,83 @@
 
 
 
-<h2 class="page-header">Penelitian</h2>
+<h2 class="page-header">Biodata</h2>
 
 <div class="panel panel-default">
     <div class="panel-heading">
-        View Penelitian    </div>
+        Detail Biodata    </div>
 
     <div class="panel-body">
                 
-
         <form action="{{ url('/penelitians') }}" method="POST" class="form-horizontal">
 
-
+   
+        
                 
         <div class="form-group">
-            <label for="id" class="col-sm-3 control-label">Id</label>
-            <div class="col-sm-6">
-                <input type="text" name="id" id="id" class="form-control" value="{{$model->id}}" readonly="readonly">
+                <label for="Nama" class="col-sm-2 col-form-label">Nama</label>
+                <div class="col-sm-10">
+                <input type="text" name="nama" class="form-control" id="inputNama" value="{{$model->nama}}" readonly="readonly">
+            </div>
+        </div>
+        <div class="form-group">
+                <label for="NIM" class="col-sm-2 col-form-label">NIM</label>
+                <div class="col-sm-10">
+                <input type="text" name="nim" class="form-control" id="inputNIM" value="{{$model->nim}}" readonly="readonly">
+            </div>
+        </div>
+        <div class="form-group">
+                <label for="TTL" class="col-sm-2 col-form-label">TTL</label>
+                <div class="col-sm-10">
+                <input type="text" name="ttl" class="form-control" id="inputTTL" value="{{$model->ttl}}" readonly="readonly">
+            </div>
+        </div>
+        <div class="form-group">
+                <label for="Sekolah" class="col-sm-2 col-form-label">Sekolah</label>
+                <div class="col-sm-10">
+                <input type="text" name="sekolah" class="form-control" id="inputSekolah" value="{{$model->sekolah}}" readonly="readonly">
+            </div>
+        </div>
+        <div class="form-group">
+                <label for="Alamat" class="col-sm-2 col-form-label">Alamat</label>
+                <div class="col-sm-10">
+                <input type="text" name="alamat" class="form-control" id="inputAlamat" value="{{$model->alamat}}" readonly="readonly">
+            </div>
+        </div>
+        <div class="form-group">
+                <label for="Tahun" class="col-sm-2 col-form-label">Tahun</label>
+                <div class="col-sm-10">
+                <input type="text" name="tahun" class="form-control" id="inputTahun" value="{{$model->tahun}}" readonly="readonly">
+            </div>
+        </div>
+        <div class="form-group">
+                <label for="Prodi" class="col-sm-2 col-form-label">Prodi</label>
+                <div class="col-sm-10">
+                <input type="text" name="prodi" class="form-control" id="inputProdi" value="{{$model->prodi}}" readonly="readonly">
+            </div>
+        </div>
+        <div class="form-group">
+                <label for="Username" class="col-sm-2 col-form-label">Username</label>
+                <div class="col-sm-10">
+                <input type="text" name="username" class="form-control" id="inputUsername" value="{{$model->name}}" readonly="readonly">
+            </div>
+        </div>
+        <div class="form-group">
+                <label for="Email" class="col-sm-2 col-form-label">Email</label>
+                <div class="col-sm-10">
+                <input type="text" name="email" class="form-control" id="inputEmail" value="{{$model->email}}" readonly="readonly">
             </div>
         </div>
         
                 
-        <div class="form-group">
-            <label for="judul" class="col-sm-3 control-label">Judul</label>
-            <div class="col-sm-6">
-                <input type="text" name="judul" id="judul" class="form-control" value="{{$model->judul}}" readonly="readonly">
-            </div>
-        </div>
-        
-                
-        <div class="form-group">
-            <label for="pelaksana" class="col-sm-3 control-label">Pelaksana</label>
-            <div class="col-sm-6">
-                <input type="text" name="pelaksana" id="pelaksana" class="form-control" value="{{$model->pelaksana}}" readonly="readonly">
-            </div>
-        </div>
-        
-                
-        <div class="form-group">
-            <label for="nidn_nim" class="col-sm-3 control-label">Nidn Nim</label>
-            <div class="col-sm-6">
-                <input type="text" name="nidn_nim" id="nidn_nim" class="form-control" value="{{$model->nidn_nim}}" readonly="readonly">
-            </div>
-        </div>
-        
-                
-        <div class="form-group">
-            <label for="program_studi" class="col-sm-3 control-label">Program Studi</label>
-            <div class="col-sm-6">
-                <input type="text" name="program_studi" id="program_studi" class="form-control" value="{{$model->program_studi}}" readonly="readonly">
-            </div>
-        </div>
-        
-                
-        <div class="form-group">
-            <label for="tahun" class="col-sm-3 control-label">Tahun</label>
-            <div class="col-sm-6">
-                <input type="text" name="tahun" id="tahun" class="form-control" value="{{$model->tahun}}" readonly="readonly">
-            </div>
-        </div>
-        
-                
-        <div class="form-group">
-            <label for="jangka_waktu" class="col-sm-3 control-label">Jangka Waktu</label>
-            <div class="col-sm-6">
-                <input type="text" name="jangka_waktu" id="jangka_waktu" class="form-control" value="{{$model->jangka_waktu}}" readonly="readonly">
-            </div>
-        </div>
-        
-                
-        <div class="form-group">
-            <label for="biaya" class="col-sm-3 control-label">Biaya</label>
-            <div class="col-sm-6">
-                <input type="text" name="biaya" id="biaya" class="form-control" value="{{$model->biaya}}" readonly="readonly">
-            </div>
-        </div>
-        
-                
-        <div class="form-group">
-            <label for="lokasi" class="col-sm-3 control-label">Lokasi</label>
-            <div class="col-sm-6">
-                <input type="text" name="lokasi" id="lokasi" class="form-control" value="{{$model->lokasi}}" readonly="readonly">
-            </div>
-        </div>
-        
-                
-        <!-- <div class="form-group">
-            <label for="created_at" class="col-sm-3 control-label">Created At</label>
-            <div class="col-sm-6">
-                <input type="text" name="created_at" id="created_at" class="form-control" value="{{$model['created_at'] or ''}}" readonly="readonly">
-            </div>
-        </div> -->
         
         
         <div class="form-group">
             <div class="col-sm-offset-3 col-sm-6">
                 <a class="btn btn-default" href="{{ url('/penelitians') }}"><i class="glyphicon glyphicon-chevron-left"></i> Back</a>
+                <a href="{{ url('/user') }}/{{$model->id}}/edit" class="btn btn-primary">Edit</a>
+            </div>
+            <div class="col-sm-offset-3 col-sm-6">
             </div>
         </div>
 

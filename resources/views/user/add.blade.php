@@ -3,89 +3,81 @@
 @section('content')
 
 
-<h2 class="page-header">Penelitian</h2>
+<h2 class="page-header">Biodata</h2>
 
 <div class="panel panel-default">
     <div class="panel-heading">
-        Add/Modify Penelitian    </div>
+        Ubah Biodata    </div>
 
     <div class="panel-body">
                 
-        <form action="{{ url('/penelitians'.( isset($model) ? "/" . $model->id : "")) }}" method="POST" class="form-horizontal">
+        <form action="{{ url('/user') }}/{{$model->id}}/update" method="POST" class="form-horizontal">
             {{ csrf_field() }}
 
-            @if (isset($model))
-                <input type="hidden" name="_method" value="PATCH">
-            @endif
+            
 
 
-                                    <div class="form-group">
-                <label for="id" class="col-sm-3 control-label">Id</label>
-                <div class="col-sm-6">
-                    <input type="text" name="id" id="id" class="form-control" value="{{(isset($model) ? $model->id : '') }}" readonly="readonly">
-                </div>
+            <div class="form-group">
+                <label for="Nama" class="col-sm-2 col-form-label">Nama</label>
+                <div class="col-sm-10">
+                <input type="text" name="nama" class="form-control" id="inputNama" value="{{$model->nama}}">
             </div>
-                                                                                                            <div class="form-group">
-                <label for="judul" class="col-sm-3 control-label">Judul</label>
-                <div class="col-sm-6">
-                    <input type="text" name="judul" id="judul" class="form-control" value="{{(isset($model) ? $model->judul : '') }}">
-                </div>
+        </div>
+        <div class="form-group">
+                <label for="NIM" class="col-sm-2 col-form-label">NIM</label>
+                <div class="col-sm-10">
+                <input type="text" name="nim" class="form-control" id="inputNIM" value="{{$model->nim}}">
             </div>
-                                                                                                <div class="form-group">
-                <label for="pelaksana" class="col-sm-3 control-label">Peneliti</label>
-                <div class="col-sm-6">
-                    <input type="text" name="pelaksana" id="pelaksana" class="form-control" value="{{(isset($model) ? $model->pelaksana : '') }}">
-                </div>
+        </div>
+        <div class="form-group">
+                <label for="TTL" class="col-sm-2 col-form-label">TTL</label>
+                <div class="col-sm-10">
+                <input type="text" name="ttl" class="form-control" id="inputTTL" value="{{$model->ttl}}">
             </div>
-                                                                                                <div class="form-group">
-                <label for="nidn_nim" class="col-sm-3 control-label">Nidn Nim</label>
-                <div class="col-sm-6">
-                    <input type="text" name="nidn_nim" id="nidn_nim" class="form-control" value="{{(isset($model) ? $model->nidn_nim : '') }}">
-                </div>
+        </div>
+        <div class="form-group">
+                <label for="Sekolah" class="col-sm-2 col-form-label">Sekolah</label>
+                <div class="col-sm-10">
+                <input type="text" name="sekolah" class="form-control" id="inputSekolah" value="{{$model->sekolah}}">
             </div>
-                                                                                                <div class="form-group">
-                <label for="program_studi" class="col-sm-3 control-label">Program Studi</label>
-                <div class="col-sm-6">
-                    <input type="text" name="program_studi" id="program_studi" class="form-control" value="{{(isset($model) ? $model->program_studi : '') }}">
-                </div>
+        </div>
+        <div class="form-group">
+                <label for="Alamat" class="col-sm-2 col-form-label">Alamat</label>
+                <div class="col-sm-10">
+                <input type="text" name="alamat" class="form-control" id="inputAlamat" value="{{$model->alamat}}">
             </div>
-                                                                                                <div class="form-group">
-                <label for="tahun" class="col-sm-3 control-label">Tahun</label>
-                <div class="col-sm-6">
-                    <input type="text" name="tahun" id="tahun" class="form-control" value="{{(isset($model) ? $model->tahun : '') }}">
-                </div>
+        </div>
+        <div class="form-group">
+                <label for="Tahun" class="col-sm-2 col-form-label">Tahun</label>
+                <div class="col-sm-10">
+                <input type="text" name="tahun" class="form-control" id="inputTahun" value="{{$model->tahun}}">
             </div>
-                                                                                                <div class="form-group">
-                <label for="jangka_waktu" class="col-sm-3 control-label">Jangka Waktu</label>
-                <div class="col-sm-6">
-                    <input type="text" name="jangka_waktu" id="jangka_waktu" class="form-control" value="{{(isset($model) ? $model->jangka_waktu : '') }}">
-                </div>
+        </div>
+        <div class="form-group">
+                <label for="Prodi" class="col-sm-2 col-form-label">Prodi</label>
+                <div class="col-sm-10">
+                <input type="text" name="prodi" class="form-control" id="inputProdi" value="{{$model->prodi}}">
             </div>
-                                                                                                            <div class="form-group">
-                <label for="biaya" class="col-sm-3 control-label">Biaya</label>
-                <div class="col-sm-2">
-                    <input type="number" name="biaya" id="biaya" class="form-control" value="{{(isset($model) ? $model->biaya : '') }}">
-                </div>
+        </div>
+        <div class="form-group">
+                <label for="Username" class="col-sm-2 col-form-label">Username</label>
+                <div class="col-sm-10">
+                <input type="text" name="username" class="form-control" id="inputUsername" value="{{$model->name}}" readonly="readonly">
             </div>
-                                                                                    <div class="form-group">
-                <label for="lokasi" class="col-sm-3 control-label">Lokasi</label>
-                <div class="col-sm-6">
-                    <input type="text" name="lokasi" id="lokasi" class="form-control" value="{{(isset($model) ? $model->lokasi : '') }}">
-                </div>
-            <!-- </div>
-                                                                                                                        <div class="form-group">
-                <label for="created_at" class="col-sm-3 control-label">Created At</label>
-                <div class="col-sm-3">
-                    <input type="date" name="created_at" id="created_at" class="form-control" value="@if (isset($model)) $model['created_at'] @endif">
-                </div>-->
-            </div> 
+        </div>
+        <div class="form-group">
+                <label for="Email" class="col-sm-2 col-form-label">Email</label>
+                <div class="col-sm-10">
+                <input type="text" name="email" class="form-control" id="inputEmail" value="{{$model->email}}" readonly="readonly">
+            </div>
+        </div>
                                     
             <div class="form-group">
                 <div class="col-sm-offset-3 col-sm-6">
                     <button type="submit" class="btn btn-success">
                         <i class="fa fa-plus"></i> Save
                     </button> 
-                    <a class="btn btn-default" href="{{ url('/penelitians') }}"><i class="glyphicon glyphicon-chevron-left"></i> Back</a>
+                    <a class="btn btn-default" href="{{ url('/user') }}"><i class="glyphicon glyphicon-chevron-left"></i> Back</a>
                 </div>
             </div>
         </form>

@@ -33,7 +33,9 @@
               </tbody>
             </table>
         </div>
+        @if(Auth::user()->name === "admin")
         <a href="{{url('pengabdians/create')}}" class="btn btn-primary" role="button">Add pengabdian</a>
+        @endif
     </div>
 </div>
 
@@ -47,6 +49,7 @@
 @section('scripts')
     <script type="text/javascript">
         var theGrid = null;
+        var authuser = "{{Auth::user()->name}}"
         $(document).ready(function(){
             theGrid = $('#thegrid').DataTable({
                 "processing": true,
@@ -63,12 +66,20 @@
                     },
                     {
                         "render": function ( data, type, row ) {
-                            return '<a href="{{ url('/pengabdians') }}/'+row[0]+'/edit" class="btn btn-default">Update</a>';
+                            if(authuser==="admin"){
+                                return '<a href="{{ url('/pengabdians') }}/'+row[0]+'/edit" class="btn btn-default">Update</a>';
+                            }else{
+                                return '<a href="{{ url('/pengabdians') }}/'+row[0]+'/edit" class="btn btn-default hidden">Update</a>';
+                            }
                         },
                         "targets": 10                    },
                     {
                         "render": function ( data, type, row ) {
-                            return '<a href="#" onclick="return doDelete('+row[0]+')" class="btn btn-danger">Delete</a>';
+                            if(authuser==="admin"){
+                                return '<a href="#" onclick="return doDelete('+row[0]+')" class="btn btn-danger">Delete</a>';
+                            }else{
+                                return '<a href="#" onclick="return doDelete('+row[0]+')" class="btn btn-danger hidden">Delete</a>';
+                            }
                         },
                         "targets": 10+1
                     },

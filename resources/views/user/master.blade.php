@@ -172,6 +172,7 @@
             </div>
             </li>
             &nbsp;
+            <li class="active"><a href="{{URL::to('/user');}}">Profile <span class="sr-only">(current)</span></a></li>
             <li class="active"><a href="{{URL::to('/penelitians');}}">Penelitian <span class="sr-only">(current)</span></a></li>
             <li class="active"><a href="{{URL::to('/pengabdians');}}">Pengabdian <span class="sr-only">(current)</span></a></li>
             <li class="active"><a href="{{ route('logout') }}">Logout <span class="sr-only">(current)</span></a></li>

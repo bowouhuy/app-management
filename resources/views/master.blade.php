@@ -157,7 +157,9 @@
           <a class="navbar-brand" href="./">Manajemen Penlitian dan Pengabdian</a>
         </div>
        <div class="navbar-content" id="user" style="float:right; color:white; margin-top:15px;">
+       @if(Auth::user() != null)
        {{Auth::user()->name}}
+       @endif
        </div>
       </div>
     </nav>
@@ -172,10 +174,17 @@
             </div>
             </li>
             &nbsp;
+            @if(Auth::user() != null)
             <li class="active"><a href="{{URL::to('/user');}}">Profile <span class="sr-only">(current)</span></a></li>
+            @endif
             <li class="active"><a href="{{URL::to('/penelitians');}}">Penelitian <span class="sr-only">(current)</span></a></li>
             <li class="active"><a href="{{URL::to('/pengabdians');}}">Pengabdian <span class="sr-only">(current)</span></a></li>
+            @if(Auth::user() != null)
             <li class="active"><a href="{{ route('logout') }}">Logout <span class="sr-only">(current)</span></a></li>
+            @endif
+            @if(!Auth::check())
+            <li class="active"><a href="{{URL::to('/login');}}">Login <span class="sr-only">(current)</span></a></li>
+            @endif
           </ul>
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">

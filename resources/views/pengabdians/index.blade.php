@@ -33,9 +33,9 @@
               </tbody>
             </table>
         </div>
-        @if(Auth::user()->name === "admin")
-        <a href="{{url('pengabdians/create')}}" class="btn btn-primary" role="button">Add pengabdian</a>
-        @endif
+        
+        <a href="{{url('pengabdians/create')}}" class="btn btn-primary" role="button" id="add">Add pengabdian</a>
+        
     </div>
 </div>
 
@@ -49,7 +49,14 @@
 @section('scripts')
     <script type="text/javascript">
         var theGrid = null;
-        var authuser = "{{Auth::user()->name}}"
+        var loggedUser = {!! json_encode((object)auth()->user()) !!}
+        var authuser = loggedUser.name
+        if(authuser === undefined || authuser !=="admin"){
+            document.getElementById("add").setAttribute("class", "hidden");
+        }
+        
+        
+        console.log(authuser);
         $(document).ready(function(){
             theGrid = $('#thegrid').DataTable({
                 "processing": true,

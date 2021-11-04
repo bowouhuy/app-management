@@ -10,7 +10,7 @@
         List of {{ ucfirst('penelitian') }}
     </div>
 
-    <!-- <input type="hidden" name="username" value="'{{Auth::user()->name}}'"> -->
+    
 
     <div class="panel-body">
         <div class="">
@@ -35,9 +35,9 @@
               </tbody>
             </table>
         </div>
-        @if(Auth::user()->name === "admin")
-        <a href="{{url('penelitians/create')}}" class="btn btn-primary" role="button">Add penelitian</a>
-        @endif
+        
+        <a href="{{url('penelitians/create')}}" class="btn btn-primary" role="button" id="add">Add penelitian</a>
+        
     </div>
 </div>
 
@@ -52,7 +52,14 @@
     <script type="text/javascript">
         var user = document.getElementById("user").innerHTML
         var theGrid = null;
-        var authuser = "{{Auth::user()->name}}"
+        var loggedUser = {!! json_encode((object)auth()->user()) !!}
+        var authuser = loggedUser.name
+        if(authuser === undefined || authuser !=="admin"){
+            document.getElementById("add").setAttribute("class", "hidden");
+        }
+        
+        
+        console.log(authuser);
         $(document).ready(function(){
             theGrid = $('#thegrid').DataTable({
                 "processing": true,

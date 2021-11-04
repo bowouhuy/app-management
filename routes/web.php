@@ -18,7 +18,7 @@ use App\Http\Controllers\UserController;
 */
 
 Route::get('/', function () {
-    return view('login');
+    return view('penelitians.index');
 });
 
 Route::get('/penelitians', [PenelitiansController::class, 'index']);
